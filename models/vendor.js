@@ -5,6 +5,7 @@ const vendorSchema = new mongoose.Schema({
     arenaPics: { type: [String], required: true }, // Array of image URLs
     numberOfCourts: { type: Number, required: true }, // Number of courts
     location: { type: String, required: true }, // Vendor location
+    type: { type: String, required: true }, // Vendor location
     pricing: { type: Number, required: true }, // Pricing per slot
     slots: { 
         type: Map, 

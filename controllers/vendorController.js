@@ -13,7 +13,7 @@ exports.getAllVendors = async (req, res) => {
 // Create a new vendor with time slot availability
 exports.createVendor = async (req, res) => {
     try {
-        const { name, arenaPics, numberOfCourts, location, pricing, slots } = req.body;
+        const { name, arenaPics, numberOfCourts, location,type, pricing, slots } = req.body;
 
         // Validate provided slots
         const defaultSlots = {
@@ -39,6 +39,7 @@ exports.createVendor = async (req, res) => {
             arenaPics,
             numberOfCourts,
             location,
+            type,
             pricing,
             slots: updatedSlots,
         });
