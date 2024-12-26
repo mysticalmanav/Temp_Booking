@@ -32,7 +32,7 @@ exports.createVendor = async (req, res) => {
         };
 
         // Merge provided slots with default values
-        const updatedSlots = { ...defaultSlots, ...slots };
+        const updatedSlots = slots;
 
         const vendor = new Vendor({
             name,
