@@ -1,11 +1,23 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
 
 // Middleware
+app.use(cors());
+
+// If you need more specific CORS configuration:
+app.use(cors({
+    origin: '*',                // Allow all origins
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],  // Allow all methods
+    allowedHeaders: '*',        // Allow all headers
+    credentials: true,          // Allow credentials (cookies, authorization headers, etc)
+    maxAge: 86400              // Cache preflight requests for 24 hours
+}));
+
 app.use(bodyParser.json());
 
 // Routes
